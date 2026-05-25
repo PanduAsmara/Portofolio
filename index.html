@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Pandu.dev | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script>
+        // Prevent Tailwind from overriding our layout
+        window.tailwind = { config: { corePlugins: { preflight: false } } }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -369,7 +373,7 @@
     </section>
 
     <footer>
-        © 2026 Frasya Pandu Asmara — Premium Portfolio. All Rights Reserved.
+        © 2026 Frasya Pandu Asmara — Portfolio. All Rights Reserved.
     </footer>
 
     <script src="js/main.js"></script>
