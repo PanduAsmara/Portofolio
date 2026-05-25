@@ -5,366 +5,377 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Pandu.dev | Portfolio</title>
     <link rel="icon" href="assets/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>window.tailwind = { config: { corePlugins: { preflight: false } } }</script>
+
+    <script>
+        // Prevent Tailwind from overriding our layout
+        window.tailwind = { config: { corePlugins: { preflight: false } } }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="hero-bg grid-bg text-white">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="container nav-inner">
-        <div class="brand">
-            <div class="code-icon">&lt;/&gt;</div>
-            <h1>Pandu<span>.dev</span></h1>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="brand">
+                <div class="code-icon">&lt;/&gt;</div>
+                <h1>Pandu<span>.dev</span></h1>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#experience">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/6283116835817" target="_blank">
+                <button class="talk-btn">Let's Talk <i class="fa-solid fa-paper-plane ml-1"></i></button>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#experience">Journey</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <a href="https://wa.me/6283116835817" target="_blank">
-            <button class="talk-btn">Let's Talk <i class="fa-solid fa-paper-plane ml-1"></i></button>
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#achievements" class="mobile-link">Achievements</a>
+        <a href="#experience" class="mobile-link">Journey</a>
+        <a href="#contact" class="mobile-link">Contact</a>
     </div>
-</nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-    <a href="#about"        class="mobile-link"><i class="fa-solid fa-user"></i> About</a>
-    <a href="#projects"     class="mobile-link"><i class="fa-solid fa-code"></i> Projects</a>
-    <a href="#achievements" class="mobile-link"><i class="fa-solid fa-trophy"></i> Achievements</a>
-    <a href="#experience"   class="mobile-link"><i class="fa-solid fa-road"></i> Journey</a>
-    <a href="#contact"      class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="container hero-grid">
-        <div class="hero-left reveal">
-            <div class="badge"><div class="dot"></div> OPEN TO OPPORTUNITIES</div>
-            <h1>Building modern <span>digital experiences</span> that make impact.</h1>
-            <p>A vocational high school alumnus & incoming freshman focused on Corporate Networking, Infrastructure Engineering, and Multimedia Systems.</p>
-            <div class="hero-buttons">
-                <a href="#projects"><button class="primary-btn">View My Projects</button></a>
-                <a href="#" target="_blank"><button class="secondary-btn">Download CV</button></a>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="badge"><div class="dot"></div> OPEN TO OPPORTUNITIES</div>
+                <h1>Building modern <span>digital experiences</span> that make impact.</h1>
+                <p>A vocational high school alumnus & incoming freshman focused on Corporate Networking, Infrastructure Engineering, and Multimedia Systems.</p>
+                <div class="hero-buttons">
+                    <a href="#projects"><button class="primary-btn">View My Projects</button></a>
+                    <a href="#" target="_blank"><button class="secondary-btn">Download CV</button></a>
+                </div>
+                <div class="socials">
+                    <a href="https://github.com/PanduAsmara" target="_blank"><div><i class="fa-brands fa-github"></i></div></a>
+                    <a href="https://www.instagram.com/pandu_asmaraa/" target="_blank"><div><i class="fa-brands fa-instagram"></i></div></a>
+                    <a href="https://linkedin.com/" target="_blank"><div><i class="fa-brands fa-linkedin"></i></div></a>
+                </div>
             </div>
-            <div class="socials">
-                <a href="https://github.com/PanduAsmara" target="_blank"><div><i class="fa-brands fa-github"></i></div></a>
-                <a href="https://www.instagram.com/pandu_asmaraa/" target="_blank"><div><i class="fa-brands fa-instagram"></i></div></a>
-                <a href="https://linkedin.com/" target="_blank"><div><i class="fa-brands fa-linkedin"></i></div></a>
-            </div>
-        </div>
 
-        <div class="hero-right reveal delay-2">
-            <div class="profile-card">
-                <div class="profile-top">
-                    <img src="assets/profile.jpeg" alt="Profile">
-                    <div>
-                        <h2>Frasya Pandu Asmara</h2>
-                        <h3>Network Engineer & Student</h3>
-                        <div class="info-grid">
-                            <div><i class="fa-solid fa-graduation-cap text-purple-400"></i> College Student</div>
-                            <div><i class="fa-solid fa-location-dot text-purple-400"></i> Indonesia</div>
+            <div class="hero-right">
+                <div class="profile-card">
+                    <div class="profile-top">
+                        <img src="assets/profile.jpeg" alt="Profile">
+                        <div>
+                            <h2>Frasya Pandu Asmara</h2>
+                            <h3>Network Engineer & Student</h3>
+                            <div class="info-grid">
+                                <div><i class="fa-solid fa-graduation-cap text-purple-400"></i> College Student</div>
+                                <div><i class="fa-solid fa-location-dot text-purple-400"></i> Indonesia</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="terminal">
-                    <div class="terminal-header">
-                        <span class="dot-term red"></span>
-                        <span class="dot-term yellow"></span>
-                        <span class="dot-term green"></span>
-                    </div>
-                    <pre><code><span class="keyword">const</span> student = {
+
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="dot-term red"></span><span class="dot-term yellow"></span><span class="dot-term green"></span>
+                        </div>
+                        <pre><code><span class="keyword">const</span> student = {
   name: <span class="string">"Frasya Pandu Asmara"</span>,
   college: <span class="string">"Politeknik Negeri Jakarta"</span>,
   prodi: <span class="string">"Teknik Multimedia & Jaringan"</span>,
   intern: <span class="string">"PT. YCH Distripark"</span>
 };</code></pre>
-                </div>
-                <div class="techs">
-                    <div title="Cisco"><i class="fa-solid fa-network-wired text-blue-400"></i></div>
-                    <div title="Linux"><i class="fa-brands fa-linux text-yellow-500"></i></div>
-                    <div title="Docker"><i class="fa-brands fa-docker text-cyan-400"></i></div>
-                    <div title="HTML5"><i class="fa-brands fa-html5 text-orange-500"></i></div>
-                    <div title="CSS3"><i class="fa-brands fa-css3-alt text-blue-500"></i></div>
-                    <div title="JS"><i class="fa-brands fa-js text-yellow-300"></i></div>
-                    <div title="Python"><i class="fa-brands fa-python text-yellow-400"></i></div>
-                    <div title="Cloud"><i class="fa-solid fa-cloud text-sky-400"></i></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT & SKILLS -->
-<section class="content-section" id="about">
-    <div class="container content-grid">
-        <div class="glass about-card reveal">
-            <h2>About Me</h2>
-            <p>Saya merupakan lulusan Teknik Komputer dan Jaringan (TKJ) yang memiliki minat besar di bidang infrastruktur jaringan, administrasi server berbasis Linux, serta pengembangan teknologi digital dan multimedia. Memiliki pengalaman dalam pengelolaan perangkat keras dan perangkat lunak jaringan pada lingkungan operasional logistik berskala besar, dengan fokus pada stabilitas sistem, efisiensi jaringan, dan pengembangan solusi berbasis teknologi modern.</p>
-            <ul class="about-list">
-                <li><i class="fa-solid fa-circle-check text-emerald-400 mr-2"></i> Eks Wakil Ketua Japanese Club</li>
-                <li><i class="fa-solid fa-circle-check text-emerald-400 mr-2"></i> Mahasiswa Baru Politeknik Negeri Jakarta 2026</li>
-            </ul>
-        </div>
-        <div class="glass skills-card reveal delay-1">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-container-grid">
-                <div class="skill">
-                    <div class="skill-top"><span>Cisco & MikroTik Routing</span><span>90%</span></div>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-top"><span>Linux Server Admin</span><span>80%</span></div>
-                    <div class="bar"><div style="width:80%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-top"><span>Web Frontend (HTML/CSS)</span><span>85%</span></div>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-top"><span>Network Troubleshooting</span><span>88%</span></div>
-                    <div class="bar"><div style="width:88%"></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="projects-section" id="projects">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>Featured <span>Projects</span></h2>
-            <p>Eksplorasi proyek infrastruktur dan pengembangan aplikasi sistem.</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card reveal delay-1">
-                <div class="project-img-box">
-                    <i class="fa-solid fa-network-wired text-4xl text-blue-400"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Enterprise Network Design</h3>
-                    <p>Perancangan dan implementasi arsitektur jaringan kantor berskala menengah menggunakan dynamic routing protocol OSPF untuk mendukung konektivitas yang stabil, efisien, dan mudah dikembangkan.</p>
-                    <div class="project-tech-tags">
-                        <span class="proj-tag">Cisco</span><span class="proj-tag">OSPF</span><span class="proj-tag">Networking</span>
                     </div>
-                </div>
-            </div>
-            <div class="project-card reveal delay-2">
-                <div class="project-img-box">
-                    <i class="fa-solid fa-server text-4xl text-purple-400"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Linux Automated Lab</h3>
-                    <p>Membangun lingkungan server lokal berbasis Debian yang terintegrasi dengan Docker container untuk kebutuhan virtualisasi, pengujian layanan jaringan, dan otomasi sistem.</p>
-                    <div class="project-tech-tags">
-                        <span class="proj-tag">Debian</span><span class="proj-tag">Docker</span><span class="proj-tag">Linux Server</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card reveal delay-3">
-                <div class="project-img-box">
-                    <i class="fa-solid fa-display text-4xl text-cyan-400"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Multimedia Website</h3>
-                    <p>Pengembangan website portofolio interaktif dengan desain modern, responsif, dan optimal di berbagai perangkat menggunakan teknologi front-end terkini.</p>
-                    <div class="project-tech-tags">
-                        <span class="proj-tag">HTML/CSS</span><span class="proj-tag">JS</span>
+
+                    <div class="techs">
+                        <div title="Cisco"><i class="fa-solid fa-network-wired text-blue-400"></i></div>
+                        <div title="Linux"><i class="fa-brands fa-linux text-yellow-500"></i></div>
+                        <div title="Docker"><i class="fa-brands fa-docker text-cyan-400"></i></div>
+                        <div title="HTML5"><i class="fa-brands fa-html5 text-orange-500"></i></div>
+                        <div title="CSS3"><i class="fa-brands fa-css3-alt text-blue-500"></i></div>
+                        <div title="JS"><i class="fa-brands fa-js text-yellow-300"></i></div>
+                        <div title="Python"><i class="fa-brands fa-python text-yellow-400"></i></div>
+                        <div title="Cloud"><i class="fa-solid fa-cloud text-sky-400"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ACHIEVEMENTS -->
-<section class="achievements-section" id="achievements">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>Certificates & <span>Achievements</span></h2>
-            <p>Sertifikasi resmi dan penghargaan kompetensi yang telah diraih.</p>
-        </div>
-        <div class="achievements-grid">
-            <div class="cert-card reveal delay-1">
-                <div class="cert-icon-box">
-                    <i class="fa-solid fa-trophy text-amber-400 text-3xl"></i>
-                </div>
-                <div class="cert-info">
-                    <span class="cert-badge gold">Gold Medalist</span>
-                    <h3>Garuda Science Competition</h3>
-                    <p class="cert-sub">Bidang Bahasa Inggris — Tingkat Nasional</p>
-                    <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2025</span>
-                </div>
-                <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID_1" target="_blank" rel="noopener noreferrer" class="cert-btn">
-                    <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
-                </a>
+    <section class="content-section" id="about">
+        <div class="container content-grid">
+            <div class="glass about-card">
+                <h2>About Me</h2>
+                <p>
+                    Saya merupakan lulusan Teknik Komputer dan Jaringan (TKJ) yang memiliki minat besar di bidang infrastruktur jaringan, administrasi server berbasis Linux, serta pengembangan teknologi digital dan multimedia. Memiliki pengalaman dalam pengelolaan perangkat keras dan perangkat lunak jaringan pada lingkungan operasional logistik berskala besar, dengan fokus pada stabilitas sistem, efisiensi jaringan, dan pengembangan solusi berbasis teknologi modern.
+                </p>
             </div>
-            <div class="cert-card reveal delay-2">
-                <div class="cert-icon-box">
-                    <i class="fa-solid fa-medal text-slate-300 text-3xl"></i>
-                </div>
-                <div class="cert-info">
-                    <span class="cert-badge bronze">Juara 3</span>
-                    <h3>Cisco Networking Competition</h3>
-                    <p class="cert-sub">Universitas Bakrie — Tingkat Nasional</p>
-                    <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
-                </div>
-                <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID_2" target="_blank" rel="noopener noreferrer" class="cert-btn">
-                    <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
-                </a>
-            </div>
-            <div class="cert-card reveal delay-3">
-                <div class="cert-icon-box">
-                    <i class="fa-solid fa-award text-purple-400 text-3xl"></i>
-                </div>
-                <div class="cert-info">
-                    <span class="cert-badge silver">Juara 2</span>
-                    <h3>Lomba Kompetensi Siswa (LKS)</h3>
-                    <p class="cert-sub">Bidang ITNSA — Tingkat Kota Bekasi</p>
-                    <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
-                </div>
-                <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID_3" target="_blank" rel="noopener noreferrer" class="cert-btn">
-                    <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- JOURNEY -->
-<section class="experience-section" id="experience">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>My <span>Journey</span></h2>
-            <p>Riwayat perjalanan edukasi dan jejak pengalaman profesional saya.</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Pendidikan Dasar</div>
-                <div class="glass timeline-content">
-                    <h3>SDN Mustika Jaya 7</h3>
-                    <p>Menyelesaikan jenjang pendidikan dasar awal.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Pendidikan Menengah</div>
-                <div class="glass timeline-content">
-                    <h3>SMPN 14 Tambun Selatan</h3>
-                    <p>Aktif dalam pembelajaran akademik sekolah.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Pendidikan Kejuruan</div>
-                <div class="glass timeline-content">
-                    <h3>SMKN 3 Kota Bekasi</h3>
-                    <h4>Kompetensi Keahlian: Teknik Komputer & Jaringan (TKJ)</h4>
-                    <p>Mulai mendalami dasar topologi jaringan, subnetting, Mikrotik › MTCNA, Cisco › CCNA, hingga administrasi sistem server Linux.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot" style="background:#ec4899;box-shadow:0 0 10px #ec4899;"></div>
-                <div class="timeline-date">Pengalaman Organisasi</div>
-                <div class="glass timeline-content" style="border-color:rgba(236,72,153,0.25);">
-                    <h3>Japanese Club SMKN 3 Kota Bekasi</h3>
-                    <h4>Wakil Ketua</h4>
-                    <p>Memimpin manajemen internal komunitas, menyusun agenda kebudayaan, serta mengoordinasikan kegiatan antar-divisi.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot" style="background:#a855f7;box-shadow:0 0 10px #a855f7;"></div>
-                <div class="timeline-date">4 November 2024 – 4 April 2026</div>
-                <div class="glass timeline-content" style="border-color:rgba(168,85,247,0.25);">
-                    <h3>PT. YCH Distripark</h3>
-                    <h4>IT Network & Infrastructure Support (Magang 6 Bulan)</h4>
-                    <p>Bertanggung jawab dalam memonitoring stabilitas konektivitas warehouse logistik, troubleshooting perangkat jaringan operasional, serta membantu administrasi infrastruktur IT internal perusahaan.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot" style="background:#22d3ee;box-shadow:0 0 10px #22d3ee;"></div>
-                <div class="timeline-date">2026 – Baru Masuk</div>
-                <div class="glass timeline-content" style="border-color:rgba(34,211,238,0.3);background:rgba(34,211,238,0.02);">
-                    <h3>Politeknik Negeri Jakarta (PNJ)</h3>
-                    <h4>Teknik Informatika dan Komputer — Teknik Multimedia dan Jaringan</h4>
-                    <p>Terdaftar sebagai Mahasiswa Baru (Maba) untuk mendalami integrasi sistem multimedia interaktif dikombinasikan dengan teknik infrastruktur jaringan tingkat lanjut.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-    <div class="container contact-grid">
-        <div class="reveal">
-            <div class="badge"><div class="dot"></div> GET IN TOUCH</div>
-            <h2 class="contact-title">Let's build something <span>incredible!</span></h2>
-            <p class="contact-desc">Hubungi saya untuk diskusi jaringan, multimedia, kolaborasi, ataupun kesempatan berkarir.</p>
-            <div class="contact-info-list">
-                <div class="contact-info-item">
-                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                    <div>
-                        <h4>Email Me</h4>
-                        <p>frasyapanduasmara@gmail.com</p>
+            <div class="glass skills-card">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-container-grid">
+                    <div class="skill">
+                        <div class="skill-top"><span>Cisco & MikroTik Routing</span><span>90%</span></div>
+                        <div class="bar"><div style="width:90%"></div></div>
                     </div>
-                </div>
-                <div class="contact-info-item">
-                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Bekasi, Indonesia</p>
+                    <div class="skill">
+                        <div class="skill-top"><span>Linux Server Admin</span><span>80%</span></div>
+                        <div class="bar"><div style="width:80%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-top"><span>Web Frontend (HTML/CSS)</span><span>85%</span></div>
+                        <div class="bar"><div style="width:85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-top"><span>Network Troubleshooting</span><span>88%</span></div>
+                        <div class="bar"><div style="width:88%"></div></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="glass contact-form-container reveal delay-2">
-            <form id="contactForm" action="https://formsubmit.co/frasyapanduasmara@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="📩 Pesan Baru dari Portfolio - frasyapanduasmara.my.id">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://frasyapanduasmara.my.id?sent=true">
-                <input type="text" name="_honey" style="display:none">
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" name="name" placeholder="Fill In With Your Name" required>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured <span>Projects</span></h2>
+                <p>Eksplorasi proyek infrastruktur dan pengembangan aplikasi sistem.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="glass project-card">
+                    <div class="project-img-box">
+                        <i class="fa-solid fa-network-wired text-4xl text-blue-400"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Enterprise Network Design</h3>
+                        <p>Perancangan dan implementasi arsitektur jaringan kantor berskala menengah menggunakan dynamic routing protocol OSPF untuk mendukung konektivitas yang stabil, efisien, dan mudah dikembangkan.</p>
+                        <div class="project-tech-tags">
+                            <span class="proj-tag">Cisco</span><span class="proj-tag">OSPF</span><span class="proj-tag">Networking</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="yourmail@example.com" required>
+
+                <div class="glass project-card">
+                    <div class="project-img-box">
+                        <i class="fa-solid fa-server text-4xl text-purple-400"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Linux Automated Lab</h3>
+                        <p>Membangun lingkungan server lokal berbasis Debian yang terintegrasi dengan Docker container untuk kebutuhan virtualisasi, pengujian layanan jaringan, dan otomasi sistem.</p>
+                        <div class="project-tech-tags">
+                            <span class="proj-tag">Debian</span><span class="proj-tag">Docker</span><span class="proj-tag">Linux Server</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="3" placeholder="Halo Frasya, saya tertarik untuk..." required></textarea>
+
+                <div class="glass project-card">
+                    <div class="project-img-box">
+                        <i class="fa-solid fa-display text-4xl text-cyan-400"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Multimedia Website</h3>
+                        <p>Pengembangan website portofolio interaktif dengan desain modern, responsif, dan optimal di berbagai perangkat menggunakan teknologi front-end terkini.</p>
+                        <div class="project-tech-tags">
+                            <span class="proj-tag">HTML/CSS</span><span class="proj-tag">JS</span>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    <span id="btnText">Send Message</span>
-                    <span id="btnLoading" style="display:none">Sending... <i class="fa-solid fa-spinner fa-spin"></i></span>
-                </button>
-            </form>
-            <div id="successMsg" style="display:none;text-align:center;padding:2rem;">
-                <i class="fa-solid fa-circle-check text-emerald-400 text-5xl" style="display:block;margin-bottom:1rem;"></i>
-                <h3 style="color:#34d399;margin-bottom:.5rem;">Pesan Terkirim!</h3>
-                <p style="color:#94a3b8;">Terima kasih sudah menghubungi saya. Saya akan membalas secepatnya.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>© 2026 Frasya Pandu Asmara — Portfolio. All Rights Reserved.</footer>
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certificates & <span>Achievements</span></h2>
+                <p>Sertifikasi resmi dan penghargaan kompetensi yang telah diraih.</p>
+            </div>
 
-<script src="js/main.js"></script>
+            <div class="achievements-grid">
+                <div class="glass cert-card">
+                    <div class="cert-icon-box">
+                        <i class="fa-solid fa-trophy text-amber-400 text-3xl"></i>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-badge gold">Gold Medalist</span>
+                        <h3>Garuda Science Competition</h3>
+                        <p class="cert-sub">Bidang Bahasa Inggris — Tingkat Nasional</p>
+                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2025</span>
+                        <a href="https://drive.google.com/drive/folders/10sc6FHGdN8F_s4JtLOvrPCyq-iZLU0_Z" target="_blank" class="cert-btn">Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="glass cert-card">
+                    <div class="cert-icon-box">
+                        <i class="fa-solid fa-medal text-slate-300 text-3xl"></i>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-badge bronze">Juara 3</span>
+                        <h3>Cisco Networking Competition</h3>
+                        <p class="cert-sub">Universitas Bakrie — Tingkat Nasional</p>
+                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
+                        <a href="https://drive.google.com/drive/folders/140k6xU6TpmWHq43tldLMCL9IZS01fi3a" target="_blank" class="cert-btn">Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="glass cert-card">
+                    <div class="cert-icon-box">
+                        <i class="fa-solid fa-award text-purple-400 text-3xl"></i>
+                    </div>
+                    <div class="cert-info">
+                        <span class="cert-badge silver">Juara 2</span>
+                        <h3>Lomba Kompetensi Siswa (LKS)</h3>
+                        <p class="cert-sub">Bidang ITNSA — Tingkat Kota Bekasi</p>
+                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
+                        <a href="https://drive.google.com/drive/folders/14KVVTNBvqH5j5SoadpMX-oClW1lw1otJ" target="_blank" class="cert-btn">Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span>Journey</span></h2>
+                <p>Riwayat perjalanan edukasi dan jejak pengalaman profesional saya.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Pendidikan Dasar</div>
+                    <div class="glass timeline-content">
+                        <h3>SDN Mustika Jaya 7</h3>
+                        <p>Menyelesaikan jenjang pendidikan dasar awal.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Pendidikan Menengah</div>
+                    <div class="glass timeline-content">
+                        <h3>SMPN 14 Tambun Selatan</h3>
+                        <p>Aktif dalam pembelajaran akademik sekolah.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Pendidikan Kejuruan</div>
+                    <div class="glass timeline-content">
+                        <h3>SMKN 3 Kota Bekasi</h3>
+                        <h4>Kompetensi Keahlian: Teknik Komputer & Jaringan (TKJ)</h4>
+                        <p>Mulai mendalami dasar topologi jaringan, subnetting, Mikrotik > MTCNA, Cisco > CCNA, hingga administrasi sistem server Linux.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #ec4899; box-shadow: 0 0 10px #ec4899;"></div>
+                    <div class="timeline-date">Pengalaman Organisasi</div>
+                    <div class="glass timeline-content" style="border-color: rgba(236, 72, 153, 0.25);">
+                        <h3>Japanese Club SMKN 3 Kota Bekasi</h3>
+                        <h4>Wakil Ketua</h4>
+                        <p>Memimpin manajemen internal komunitas, menyusun agenda kebudayaan, serta mengoordinasikan kegiatan antar-divisi.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #a855f7; box-shadow: 0 0 10px #a855f7;"></div>
+                    <div class="timeline-date">4 November 2024 – 4 April 2025</div>
+                    <div class="glass timeline-content" style="border-color: rgba(168, 85, 247, 0.25);">
+                        <h3>PT. YCH Distripark</h3>
+                        <h4>IT Network & Infrastructure Support (Magang 6 Bulan)</h4>
+                        <p>Bertanggung jawab dalam memonitoring stabilitas konektivitas warehouse logistik, troubleshooting perangkat jaringan operasional, serta membantu administrasi infrastruktur IT internal perusahaan.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background: #22d3ee; box-shadow: 0 0 10px #22d3ee;"></div>
+                    <div class="timeline-date">2026 – Baru Masuk</div>
+                    <div class="glass timeline-content" style="border-color: rgba(34, 211, 238, 0.3); background: rgba(34, 211, 238, 0.02);">
+                        <h3>Politeknik Negeri Jakarta (PNJ)</h3>
+                        <h4>Fakultas/Jurusan: Teknik Informatika dan Komputer (TIK)</h4>
+                        <h4>Prodi: Teknik Multimedia dan Jaringan (TMJ)</h4>
+                        <p>Terdaftar sebagai Mahasiswa Baru (Maba) untuk mendalami integrasi sistem multimedia interaktif tinggi dikombinasikan dengan teknik infrastruktur jaringan tingkat lanjut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+            <div>
+                <div class="badge"><div class="dot"></div> GET IN TOUCH</div>
+                <h2 class="contact-title">Let's build something <span>incredible!</span></h2>
+                <p class="contact-desc">Hubungi saya untuk diskusi jaringan, multimedia, kolaborasi, ataupun kesempatan berkarir.</p>
+                
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Me</h4>
+                            <p>frasyapanduasmara@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bekasi, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass contact-form-container">
+                <form id="contactForm" action="https://formsubmit.co/frasyapanduasmara@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="📩 Pesan Baru dari Portfolio - frasyapanduasmara.my.id">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://frasyapanduasmara.my.id?sent=true">
+                    <!-- Honeypot anti-spam -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="Fill In With Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="yourmail@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="3" placeholder="Halo Frasya, saya tertarik untuk..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span id="btnText">Send Message</span>
+                        <span id="btnLoading" style="display:none">Sending... <i class="fa-solid fa-spinner fa-spin"></i></span>
+                    </button>
+                </form>
+                <div id="successMsg" style="display:none; text-align:center; padding: 2rem;">
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-5xl mb-4"></i>
+                    <h3 style="color:#34d399; margin-bottom:0.5rem;">Pesan Terkirim!</h3>
+                    <p style="color:#94a3b8;">Terima kasih sudah menghubungi saya. Saya akan membalas secepatnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Frasya Pandu Asmara — Portfolio. All Rights Reserved.
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
