@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
 });
 
 // =============================================
-// Smooth scroll for nav/anchor links
+// Smooth scroll
 // =============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -26,7 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // =============================================
-// Intersection Observer — fade-in + slide-left
+// Scroll Animations — sederhana, tidak konflik
 // =============================================
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -35,30 +35,21 @@ const revealObserver = new IntersectionObserver((entries) => {
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
-// Glass cards, cert cards, project cards — fade-in (tapi BUKAN .timeline-item)
-document.querySelectorAll('.glass:not(.timeline-content), .project-card, .cert-card').forEach(el => {
-    el.classList.add('fade-in');
-    revealObserver.observe(el);
-});
-
-// Section titles & stagger grids
-document.querySelectorAll('.fade-in, .fade-in-stagger').forEach(el => revealObserver.observe(el));
-
-// Timeline items — slide-left saja, tidak ditambah fade-in
-document.querySelectorAll('.slide-left').forEach(el => revealObserver.observe(el));
+// Semua elemen animasi
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // =============================================
-// Skill bar animation on scroll
+// Skill bar animation
 // =============================================
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.querySelectorAll('.bar div').forEach(bar => {
-                const width = bar.style.width;
+                const w = bar.getAttribute('data-width') || bar.style.width;
                 bar.style.width = '0';
-                setTimeout(() => { bar.style.width = width; }, 150);
+                setTimeout(() => { bar.style.width = w; }, 150);
             });
             skillObserver.unobserve(entry.target);
         }
@@ -69,7 +60,7 @@ const skillsCard = document.querySelector('.skills-card');
 if (skillsCard) skillObserver.observe(skillsCard);
 
 // =============================================
-// Active nav link highlight on scroll
+// Active nav highlight
 // =============================================
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -90,7 +81,7 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(s => navObserver.observe(s));
 
 // =============================================
-// Hamburger mobile menu toggle
+// Hamburger menu
 // =============================================
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -110,7 +101,6 @@ if (hamburger && mobileMenu) {
         });
     });
 
-    // Close on outside tap
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
             hamburger.classList.remove('open');
@@ -121,7 +111,7 @@ if (hamburger && mobileMenu) {
 }
 
 // =============================================
-// Contact Form — AJAX with FormSubmit
+// Contact Form
 // =============================================
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -134,9 +124,8 @@ if (contactForm) {
 
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText   = document.getElementById('btnText');
+        const submitBtn  = document.getElementById('submitBtn');
+        const btnText    = document.getElementById('btnText');
         const btnLoading = document.getElementById('btnLoading');
 
         submitBtn.disabled = true;
@@ -149,13 +138,10 @@ if (contactForm) {
                 body: new FormData(contactForm),
                 headers: { 'Accept': 'application/json' }
             });
-
             if (response.ok) {
                 contactForm.style.display = 'none';
                 document.getElementById('successMsg').style.display = 'block';
-            } else {
-                throw new Error('Server error');
-            }
+            } else throw new Error();
         } catch {
             alert('Terjadi kesalahan. Silakan coba lagi atau hubungi langsung via email.');
             submitBtn.disabled = false;
@@ -164,29 +150,3 @@ if (contactForm) {
         }
     });
 }
-
-// =============================================
-// Mobile menu animation (CSS handles display,
-// this ensures the transition fires correctly)
-// =============================================
-(function patchMobileMenuAnimation() {
-    const menu = document.getElementById('mobileMenu');
-    if (!menu) return;
-    const observer = new MutationObserver(() => {
-        if (menu.classList.contains('open')) {
-            // force reflow so CSS transition plays
-            menu.style.display = 'flex';
-            requestAnimationFrame(() => {
-                menu.style.opacity = '1';
-                menu.style.transform = 'translateY(0)';
-            });
-        } else {
-            menu.style.opacity = '0';
-            menu.style.transform = 'translateY(-10px)';
-            setTimeout(() => {
-                if (!menu.classList.contains('open')) menu.style.display = '';
-            }, 260);
-        }
-    });
-    observer.observe(menu, { attributes: true, attributeFilter: ['class'] });
-})();
