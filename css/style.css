@@ -759,6 +759,26 @@ footer {
         font-size: 2.6rem;
     }
 
+    .hero-left {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+    .badge {
+        margin-inline: auto;
+    }
+
     .hero-right {
         display: flex;
         justify-content: center;
@@ -828,38 +848,6 @@ footer {
         flex-direction: column;
         gap: 10px;
         width: 100%;
-    }
-
-    .primary-btn, .secondary-btn {
-        width: 100%;
-        text-align: center;
-        display: block;
-        box-sizing: border-box;
-    }
-
-    /* --- Profile Card --- */
-    .profile-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .profile-top img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .profile-top h2 {
-        font-size: 1.15rem;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
-
-    .techs {
-        grid-template-columns: repeat(4, 1fr);
     }
 
     /* --- About & Skills --- */
@@ -1086,20 +1074,90 @@ footer {
 @media(max-width: 640px) {
     .hero-left {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .badge {
         margin-inline: auto;
     }
 
+    .hero-left h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-left p {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        display: block;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        display: block;
+    }
+
     .socials {
         justify-content: center;
+    }
+
+    /* Profile card centered on mobile */
+    .hero-right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .profile-card {
         padding: 18px;
         border-radius: 24px;
         background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .profile-top {
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .profile-top img {
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+    }
+
+    .profile-top h2 {
+        font-size: 1.05rem;
+    }
+
+    .profile-top h3 {
+        font-size: 0.82rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        font-size: 0.75rem;
+    }
+
+    .techs {
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .project-card, .cert-card {
@@ -1120,6 +1178,10 @@ footer {
 
     .mobile-menu {
         border-radius: 0 0 20px 20px;
+    }
+
+    .hero {
+        position: relative;
     }
 
     .hero::before {
@@ -1151,5 +1213,31 @@ footer {
     .about-card,
     .skills-card {
         border-radius: 22px;
+    }
+
+    /* About section centered */
+    .about-card h2, .skills-card h2 {
+        text-align: center;
+    }
+
+    /* Section title */
+    .section-title {
+        padding: 0 8px;
+    }
+
+    /* Contact form */
+    .contact-title {
+        text-align: center;
+    }
+
+    .contact-desc {
+        text-align: center;
+    }
+
+    /* Footer center */
+    footer {
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 0.75rem;
     }
 }
