@@ -865,11 +865,17 @@ footer {
 .slide-left {
     opacity: 0;
     transform: translateX(-30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .slide-left.visible {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Timeline glass content: never hidden by fade-in */
+.timeline-content {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* =============================================
