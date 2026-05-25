@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
-        // Prevent Tailwind from overriding our layout
         window.tailwind = { config: { corePlugins: { preflight: false } } }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,13 +42,14 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#achievements" class="mobile-link">Achievements</a>
-        <a href="#experience" class="mobile-link">Journey</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="#about"        class="mobile-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#projects"     class="mobile-link"><i class="fa-solid fa-code"></i> Projects</a>
+        <a href="#achievements" class="mobile-link"><i class="fa-solid fa-trophy"></i> Achievements</a>
+        <a href="#experience"   class="mobile-link"><i class="fa-solid fa-road"></i> Journey</a>
+        <a href="#contact"      class="mobile-link"><i class="fa-solid fa-envelope"></i> Contact</a>
     </div>
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-left">
@@ -57,8 +57,8 @@
                 <h1>Building modern <span>digital experiences</span> that make impact.</h1>
                 <p>A vocational high school alumnus & incoming freshman focused on Corporate Networking, Infrastructure Engineering, and Multimedia Systems.</p>
                 <div class="hero-buttons">
-                    <a href="#projects"><button class="primary-btn">View My Projects</button></a>
-                    <a href="#" target="_blank"><button class="secondary-btn">Download CV</button></a>
+                    <a href="#projects" style="width:100%"><button class="primary-btn">View My Projects</button></a>
+                    <a href="#" target="_blank" style="width:100%"><button class="secondary-btn">Download CV</button></a>
                 </div>
                 <div class="socials">
                     <a href="https://github.com/PanduAsmara" target="_blank"><div><i class="fa-brands fa-github"></i></div></a>
@@ -83,7 +83,9 @@
 
                     <div class="terminal">
                         <div class="terminal-header">
-                            <span class="dot-term red"></span><span class="dot-term yellow"></span><span class="dot-term green"></span>
+                            <span class="dot-term red"></span>
+                            <span class="dot-term yellow"></span>
+                            <span class="dot-term green"></span>
                         </div>
                         <pre><code><span class="keyword">const</span> student = {
   name: <span class="string">"Frasya Pandu Asmara"</span>,
@@ -108,6 +110,7 @@
         </div>
     </section>
 
+    <!-- ===== ABOUT ===== -->
     <section class="content-section" id="about">
         <div class="container content-grid">
             <div class="glass about-card">
@@ -145,14 +148,15 @@
         </div>
     </section>
 
+    <!-- ===== PROJECTS ===== -->
     <section class="projects-section" id="projects">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Featured <span>Projects</span></h2>
                 <p>Eksplorasi proyek infrastruktur dan pengembangan aplikasi sistem.</p>
             </div>
             
-            <div class="projects-grid">
+            <div class="projects-grid fade-in-stagger">
                 <div class="glass project-card">
                     <div class="project-img-box">
                         <i class="fa-solid fa-network-wired text-4xl text-blue-400"></i>
@@ -195,62 +199,87 @@
         </div>
     </section>
 
+    <!-- ===== ACHIEVEMENTS ===== -->
     <section class="achievements-section" id="achievements">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Certificates & <span>Achievements</span></h2>
                 <p>Sertifikasi resmi dan penghargaan kompetensi yang telah diraih.</p>
             </div>
 
-            <div class="achievements-grid">
+            <div class="achievements-grid fade-in-stagger">
+
+                <!-- Card 1: Garuda Science -->
                 <div class="glass cert-card">
                     <div class="cert-icon-box">
                         <i class="fa-solid fa-trophy text-amber-400 text-3xl"></i>
                     </div>
-                    <div class="cert-info">
+                    <div class="cert-card-body cert-info">
                         <span class="cert-badge gold">Gold Medalist</span>
                         <h3>Garuda Science Competition</h3>
                         <p class="cert-sub">Bidang Bahasa Inggris — Tingkat Nasional</p>
                         <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2025</span>
                     </div>
+                    <a href="https://drive.google.com/drive/folders/10sc6FHGdN8F_s4JtLOvrPCyq-iZLU0_Z"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="cert-btn">
+                        <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
+                    </a>
                 </div>
 
+                <!-- Card 2: Cisco Competition -->
                 <div class="glass cert-card">
                     <div class="cert-icon-box">
                         <i class="fa-solid fa-medal text-slate-300 text-3xl"></i>
                     </div>
-                    <div class="cert-info">
+                    <div class="cert-card-body cert-info">
                         <span class="cert-badge bronze">Juara 3</span>
                         <h3>Cisco Networking Competition</h3>
                         <p class="cert-sub">Universitas Bakrie — Tingkat Nasional</p>
                         <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
                     </div>
+                    <a href="https://drive.google.com/drive/folders/140k6xU6TpmWHq43tldLMCL9IZS01fi3a"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="cert-btn">
+                        <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
+                    </a>
                 </div>
 
+                <!-- Card 3: LKS -->
                 <div class="glass cert-card">
                     <div class="cert-icon-box">
                         <i class="fa-solid fa-award text-purple-400 text-3xl"></i>
                     </div>
-                    <div class="cert-info">
+                    <div class="cert-card-body cert-info">
                         <span class="cert-badge silver">Juara 2</span>
                         <h3>Lomba Kompetensi Siswa (LKS)</h3>
                         <p class="cert-sub">Bidang ITNSA — Tingkat Kota Bekasi</p>
                         <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
                     </div>
+                    <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID_3"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="cert-btn">
+                        <i class="fa-brands fa-google-drive"></i> Lihat Sertifikat
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ===== JOURNEY ===== -->
     <section class="experience-section" id="experience">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>My <span>Journey</span></h2>
                 <p>Riwayat perjalanan edukasi dan jejak pengalaman profesional saya.</p>
             </div>
 
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Pendidikan Dasar</div>
                     <div class="glass timeline-content">
@@ -259,7 +288,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Pendidikan Menengah</div>
                     <div class="glass timeline-content">
@@ -268,17 +297,17 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Pendidikan Kejuruan</div>
                     <div class="glass timeline-content">
                         <h3>SMKN 3 Kota Bekasi</h3>
                         <h4>Kompetensi Keahlian: Teknik Komputer & Jaringan (TKJ)</h4>
-                        <p>Mulai mendalami dasar topologi jaringan, subnetting, Mikrotik > MTCNA, Cisco > CCNA, hingga administrasi sistem server Linux.</p>
+                        <p>Mulai mendalami dasar topologi jaringan, subnetting, Mikrotik › MTCNA, Cisco › CCNA, hingga administrasi sistem server Linux.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot" style="background: #ec4899; box-shadow: 0 0 10px #ec4899;"></div>
                     <div class="timeline-date">Pengalaman Organisasi</div>
                     <div class="glass timeline-content" style="border-color: rgba(236, 72, 153, 0.25);">
@@ -288,7 +317,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot" style="background: #a855f7; box-shadow: 0 0 10px #a855f7;"></div>
                     <div class="timeline-date">4 November 2024 – 4 April 2026</div>
                     <div class="glass timeline-content" style="border-color: rgba(168, 85, 247, 0.25);">
@@ -298,7 +327,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item slide-left">
                     <div class="timeline-dot" style="background: #22d3ee; box-shadow: 0 0 10px #22d3ee;"></div>
                     <div class="timeline-date">2026 – Baru Masuk</div>
                     <div class="glass timeline-content" style="border-color: rgba(34, 211, 238, 0.3); background: rgba(34, 211, 238, 0.02);">
@@ -312,6 +341,7 @@
         </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section class="contact-section" id="contact">
         <div class="container contact-grid">
             <div>
@@ -339,12 +369,10 @@
 
             <div class="glass contact-form-container">
                 <form id="contactForm" action="https://formsubmit.co/frasyapanduasmara@gmail.com" method="POST">
-                    <!-- FormSubmit Configuration -->
                     <input type="hidden" name="_subject" value="📩 Pesan Baru dari Portfolio - frasyapanduasmara.my.id">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://frasyapanduasmara.my.id?sent=true">
-                    <!-- Honeypot anti-spam -->
                     <input type="text" name="_honey" style="display:none">
 
                     <div class="form-group">
@@ -365,7 +393,7 @@
                     </button>
                 </form>
                 <div id="successMsg" style="display:none; text-align:center; padding: 2rem;">
-                    <i class="fa-solid fa-circle-check text-emerald-400 text-5xl mb-4"></i>
+                    <i class="fa-solid fa-circle-check text-emerald-400 text-5xl mb-4" style="display:block;margin-bottom:1rem;"></i>
                     <h3 style="color:#34d399; margin-bottom:0.5rem;">Pesan Terkirim!</h3>
                     <p style="color:#94a3b8;">Terima kasih sudah menghubungi saya. Saya akan membalas secepatnya.</p>
                 </div>
