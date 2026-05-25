@@ -32,24 +32,21 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target); // animate once
+            revealObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1 });
 
-// Observe individual glass cards, timeline items, cert cards, project cards
-document.querySelectorAll('.glass, .timeline-item, .project-card, .cert-card').forEach(el => {
+// Glass cards, cert cards, project cards — fade-in (tapi BUKAN .timeline-item)
+document.querySelectorAll('.glass:not(.timeline-content), .project-card, .cert-card').forEach(el => {
     el.classList.add('fade-in');
     revealObserver.observe(el);
 });
 
-// Observe section titles
-document.querySelectorAll('.fade-in').forEach(el => revealObserver.observe(el));
+// Section titles & stagger grids
+document.querySelectorAll('.fade-in, .fade-in-stagger').forEach(el => revealObserver.observe(el));
 
-// Stagger grids (projects, achievements)
-document.querySelectorAll('.fade-in-stagger').forEach(el => revealObserver.observe(el));
-
-// Slide from left (timeline items)
+// Timeline items — slide-left saja, tidak ditambah fade-in
 document.querySelectorAll('.slide-left').forEach(el => revealObserver.observe(el));
 
 // =============================================
