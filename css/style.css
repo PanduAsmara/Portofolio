@@ -7,11 +7,15 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
     background: #050816;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
 }
 
 .hero-bg {
@@ -32,6 +36,8 @@ body {
     max-width: 1140px;
     margin: auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navbar */
@@ -769,6 +775,16 @@ footer {
    ============================================= */
 @media(max-width: 640px) {
 
+    /* --- Global fix: nothing overflows --- */
+    * {
+        max-width: 100%;
+    }
+
+    .container {
+        padding: 0 16px;
+        width: 100%;
+    }
+
     /* --- Navbar --- */
     .nav-links {
         display: none;
@@ -788,30 +804,37 @@ footer {
         padding-top: 90px;
         padding-bottom: 32px;
         min-height: auto;
+        width: 100%;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+        width: 100%;
     }
 
     .hero-left h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         letter-spacing: -0.5px;
+        word-break: break-word;
     }
 
     .hero-left p {
         font-size: 0.9rem;
+        word-break: break-word;
     }
 
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
 
     .primary-btn, .secondary-btn {
         width: 100%;
         text-align: center;
+        display: block;
+        box-sizing: border-box;
     }
 
     /* --- Profile Card --- */
