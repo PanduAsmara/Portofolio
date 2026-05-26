@@ -4,10 +4,8 @@
 
 <div align="center">
 
-# ✨ Frasya Pandu Asmara Portfolio
-
-Modern futuristic personal portfolio website built with HTML, TailwindCSS, and JavaScript.  
-Designed with clean UI, smooth animations, and responsive experience across all devices.
+Personal portfolio website built with HTML, CSS, and JavaScript.  
+Clean glassmorphism UI with smooth animations, fully responsive across all devices.
 
 [![Website](https://img.shields.io/badge/Live%20Website-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://frasyapanduasmara.my.id)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -36,7 +34,6 @@ Built with a futuristic glassmorphism design and optimized for performance, resp
 - 🎨 Modern Glassmorphism UI
 - ⚡ Smooth Animations & Transitions
 - 📱 Fully Responsive Design
-- ⌨️ Dynamic Typing Effect
 - 🌙 Dark Futuristic Theme
 - 🚀 Fast Loading Performance
 - 🌐 Custom Domain Support
@@ -46,11 +43,15 @@ Built with a futuristic glassmorphism design and optimized for performance, resp
 
 ## 🛠️ Tech Stack
 
-| Technology | Description |
+| Technology | Role |
 |---|---|
-| HTML5 | Structure & Semantic Layout |
-| TailwindCSS | Utility-First Styling |
-| JavaScript | Interactive Features & Animations |
+| HTML5 | Structure & semantic layout |
+| CSS3 | Custom styling, glassmorphism, animations |
+| JavaScript | Interactivity, scroll effects, form handling |
+| Font Awesome 6 | Icons |
+| Google Fonts (Inter) | Typography |
+| TailwindCSS (CDN) | Utility class supplement |
+| FormSubmit | Contact form backend |
 
 ---
 
@@ -74,9 +75,24 @@ Built with a futuristic glassmorphism design and optimized for performance, resp
 ```bash
 .
 ├── assets/
+│   ├── favicon.ico
+│   ├── profile.jpeg
+│   └── preview.png
 ├── css/
+│   └── style.css
 ├── js/
+│   └── main.js
 ├── CNAME
 ├── LICENSE
 ├── README.md
 └── index.html
+```
+
+---
+
+## 👤 Author
+
+**Frasya Pandu Asmara**  
+📧 frasyapanduasmara@gmail.com  
+🌐 https://frasyapanduasmara.my.id  
+🐱‍👤 https://github.com/PanduAsmara
