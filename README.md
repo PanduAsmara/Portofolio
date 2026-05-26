@@ -57,7 +57,7 @@ Built with a futuristic glassmorphism design and optimized for performance, resp
 ## 📸 Preview
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" width="100%" />
+  <img src="./assets/preview.png" alt="Portfolio Preview" width="900"/>
 </p>
 
 ---
