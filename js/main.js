@@ -64,12 +64,10 @@ if (skillsCard) skillObserver.observe(skillsCard);
 // =============================================
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    // Check if redirected back after successful send
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('sent') === 'true') {
         contactForm.style.display = 'none';
         document.getElementById('successMsg').style.display = 'block';
-        // Clean URL
         window.history.replaceState({}, document.title, window.location.pathname + '#contact');
     }
 
@@ -80,7 +78,6 @@ if (contactForm) {
         const btnText = document.getElementById('btnText');
         const btnLoading = document.getElementById('btnLoading');
 
-        // Show loading state
         submitBtn.disabled = true;
         btnText.style.display = 'none';
         btnLoading.style.display = 'inline';
@@ -95,15 +92,13 @@ if (contactForm) {
             });
 
             if (response.ok) {
-                // Hide form, show success message
                 contactForm.style.display = 'none';
                 document.getElementById('successMsg').style.display = 'block';
             } else {
                 throw new Error('Server error');
             }
         } catch (error) {
-            // Fallback: show error and re-enable button
-            alert('Terjadi kesalahan. Silakan coba lagi atau hubungi langsung via email.');
+            alert('Something went wrong. Please try again or contact me directly via email.');
             submitBtn.disabled = false;
             btnText.style.display = 'inline';
             btnLoading.style.display = 'none';
@@ -145,7 +140,6 @@ if (hamburger && mobileMenu) {
         mobileMenu.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('open');
