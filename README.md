@@ -77,5 +77,6 @@ Built with a futuristic glassmorphism design and optimized for performance, resp
 ├── css/
 ├── js/
 ├── CNAME
-├── index.html
-└── README.md
+├── LICENSE
+├── README.md
+└── index.html
