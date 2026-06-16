@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Pandu.dev | Portfolio</title>
+    <title>Frasya Pandu Asmara | Network Engineer & Multimedia Developer</title>
+
+    <!-- ===== SEO ===== -->
+    <meta name="description" content="Portfolio of Frasya Pandu Asmara — Network Engineer & Multimedia Developer. Cisco/MikroTik routing, Linux server administration, and modern web development.">
+    <meta name="keywords" content="Frasya Pandu Asmara, Network Engineer, Multimedia Developer, Cisco, MikroTik, Linux, Web Developer, Portfolio, Indonesia">
+    <meta name="author" content="Frasya Pandu Asmara">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://frasyapanduasmara.my.id">
+
+    <!-- ===== Open Graph / Social ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Frasya Pandu Asmara | Network Engineer & Multimedia Developer">
+    <meta property="og:description" content="Network Engineer & Multimedia Developer passionate about scalable infrastructure, enterprise networks, and modern digital experiences.">
+    <meta property="og:url" content="https://frasyapanduasmara.my.id">
+    <meta property="og:image" content="https://frasyapanduasmara.my.id/assets/preview.png">
+    <meta property="og:site_name" content="Frasya Pandu Asmara — Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Frasya Pandu Asmara | Network Engineer & Multimedia Developer">
+    <meta name="twitter:description" content="Network Engineer & Multimedia Developer passionate about scalable infrastructure, enterprise networks, and modern digital experiences.">
+    <meta name="twitter:image" content="https://frasyapanduasmara.my.id/assets/preview.png">
+    <meta name="theme-color" content="#050816">
+
     <link rel="icon" href="assets/favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +36,38 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- ===== Structured data (JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Frasya Pandu Asmara",
+        "url": "https://frasyapanduasmara.my.id",
+        "image": "https://frasyapanduasmara.my.id/assets/profile.jpeg",
+        "jobTitle": "Network Engineer & Multimedia Developer",
+        "email": "mailto:frasyapanduasmara@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bekasi",
+            "addressCountry": "Indonesia"
+        },
+        "sameAs": [
+            "https://github.com/PanduAsmara",
+            "https://www.instagram.com/pandu_asmaraa/",
+            "https://www.linkedin.com/in/frasya-pandu-asmara/"
+        ]
+    }
+    </script>
+
+    <!-- ===== Theme: apply saved preference before paint (no flash) ===== -->
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
+        } catch (e) {}
+    </script>
 </head>
 <body class="hero-bg grid-bg text-white">
 
@@ -31,9 +84,14 @@
                 <a href="#experience">Journey</a>
                 <a href="#contact">Contact</a>
             </div>
-            <a href="https://wa.me/6283116835817" target="_blank">
-                <button class="talk-btn">Let's Talk <i class="fa-solid fa-paper-plane ml-1"></i></button>
-            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light mode" title="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#" id="talkLink" target="_blank" rel="noopener">
+                    <button class="talk-btn">Let's Talk <i class="fa-solid fa-paper-plane ml-1"></i></button>
+                </a>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -49,163 +107,42 @@
         <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO ===== (rendered from js/data/profile.js) -->
     <section class="hero">
         <div class="container hero-grid">
-            <div class="hero-left">
-                <div class="badge"><div class="dot"></div> OPEN TO OPPORTUNITIES</div>
-                <h1>Building modern <span>digital experiences</span> that make impact.</h1>
-                <p>Network Engineer & Multimedia Developer passionate about building scalable infrastructure, configuring enterprise networks, and crafting modern digital experiences.</p>
-                <div class="hero-buttons">
-                    <a href="#projects"><button class="primary-btn">View My Projects</button></a>
-                    <a href="#" target="_blank"><button class="secondary-btn">Download CV</button></a>
-                </div>
-                <div class="socials">
-                    <a href="https://github.com/PanduAsmara" target="_blank"><div><i class="fa-brands fa-github"></i></div></a>
-                    <a href="https://www.instagram.com/pandu_asmaraa/" target="_blank"><div><i class="fa-brands fa-instagram"></i></div></a>
-                    <a href="https://www.linkedin.com/in/frasya-pandu-asmara/" target="_blank"><div><i class="fa-brands fa-linkedin"></i></div></a>
-                </div>
-            </div>
-
-            <div class="hero-right">
-                <div class="profile-card">
-                    <div class="profile-top">
-                        <img src="assets/profile.jpeg" alt="Profile">
-                        <div>
-                            <h2>Frasya Pandu Asmara</h2>
-                            <h3>Network Engineer &amp; Student</h3>
-                            <div class="info-grid">
-                                <div><i class="fa-solid fa-graduation-cap text-purple-400"></i> College Student</div>
-                                <div><i class="fa-solid fa-location-dot text-purple-400"></i> Indonesia</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span class="dot-term red"></span><span class="dot-term yellow"></span><span class="dot-term green"></span>
-                        </div>
-                        <pre><code><span class="keyword">const</span> engineer = {
-  name: <span class="string">"Frasya Pandu Asmara"</span>,
-  focus: [<span class="string">"Networking"</span>, <span class="string">"Linux"</span>, <span class="string">"Web Dev"</span>],
-  experience: <span class="string">"PT. YCH Distripark (6 months)"</span>,
-  college: <span class="string">"Politeknik Negeri Jakarta"</span>,
-  status: <span class="string">"Open to Opportunities 🟢"</span>
-};</code></pre>
-                    </div>
-
-                    <div class="techs">
-                        <div title="Cisco"><i class="fa-solid fa-network-wired text-blue-400"></i></div>
-                        <div title="Linux"><i class="fa-brands fa-linux text-yellow-500"></i></div>
-                        <div title="Docker"><i class="fa-brands fa-docker text-cyan-400"></i></div>
-                        <div title="HTML5"><i class="fa-brands fa-html5 text-orange-500"></i></div>
-                        <div title="CSS3"><i class="fa-brands fa-css3-alt text-blue-500"></i></div>
-                        <div title="JavaScript"><i class="fa-brands fa-js text-yellow-300"></i></div>
-                        <div title="Python"><i class="fa-brands fa-python text-yellow-400"></i></div>
-                        <div title="Cloud"><i class="fa-solid fa-cloud text-sky-400"></i></div>
-                    </div>
-                </div>
-            </div>
+            <div class="hero-left"></div>
+            <div class="hero-right"></div>
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT ===== (text from profile.js, skills from skills.js) -->
     <section class="content-section" id="about">
         <div class="container content-grid">
             <div class="glass about-card">
                 <h2>About Me</h2>
-                <p>
-                    Computer & Networking graduate with a BNSP-certified competency in Computer & Network Engineering, valid for 3 years. I bring 6 months of real-world internship experience at PT. YCH Distripark, where I managed network stability across a large-scale logistics warehouse. Skilled in Cisco/MikroTik routing, Linux server administration, and front-end web development. A consistent competition achiever at both city and national level, currently enrolled at Politeknik Negeri Jakarta and actively seeking opportunities in network engineering or IT infrastructure
+                <p></p>
             </div>
 
             <div class="glass skills-card">
                 <h2>Skills &amp; Expertise</h2>
-                <div class="skills-badge-list">
-                    <div class="skill-badge-item">
-                        <div class="skill-badge-top">
-                            <span class="skill-name"><i class="fa-solid fa-network-wired text-blue-400"></i> Cisco &amp; MikroTik Routing</span>
-                            <span class="skill-level intermediate">Intermediate</span>
-                        </div>
-                        <p class="skill-detail">CCNA-level routing, OSPF, VLANs, subnetting</p>
-                    </div>
-                    <div class="skill-badge-item">
-                        <div class="skill-badge-top">
-                            <span class="skill-name"><i class="fa-brands fa-linux text-yellow-400"></i> Linux Server Administration</span>
-                            <span class="skill-level intermediate">Intermediate</span>
-                        </div>
-                        <p class="skill-detail">Debian, SSH, Docker, service configuration</p>
-                    </div>
-                    <div class="skill-badge-item">
-                        <div class="skill-badge-top">
-                            <span class="skill-name"><i class="fa-brands fa-html5 text-orange-400"></i> Web Frontend</span>
-                            <span class="skill-level intermediate">Intermediate</span>
-                        </div>
-                        <p class="skill-detail">HTML/CSS/JS, responsive design, modern UI</p>
-                    </div>
-                    <div class="skill-badge-item">
-                        <div class="skill-badge-top">
-                            <span class="skill-name"><i class="fa-solid fa-bug text-cyan-400"></i> Network Troubleshooting</span>
-                            <span class="skill-level intermediate">Intermediate</span>
-                        </div>
-                        <p class="skill-detail">ping diagnostics, switch & router reconfiguration, device connectivity checks, traffic monitoring</p>
-                    </div>
-                </div>
+                <div class="skills-badge-list"></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
+    <!-- ===== PROJECTS ===== (rendered from js/data/projects.js) -->
     <section class="projects-section" id="projects">
         <div class="container">
             <div class="section-title">
                 <h2>Featured <span>Projects</span></h2>
                 <p>A showcase of infrastructure design and system application development.</p>
             </div>
-            
-            <div class="projects-grid">
-                <div class="glass project-card">
-                    <div class="project-img-box">
-                        <i class="fa-solid fa-network-wired text-4xl text-blue-400"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Enterprise Network Design</h3>
-                        <p>Designed and implemented a medium-scale office network architecture using the OSPF dynamic routing protocol to support stable, efficient, and scalable connectivity.</p>
-                        <div class="project-tech-tags">
-                            <span class="proj-tag">Cisco</span><span class="proj-tag">OSPF</span><span class="proj-tag">Networking</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="glass project-card">
-                    <div class="project-img-box">
-                        <i class="fa-solid fa-server text-4xl text-purple-400"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Linux Automated Lab</h3>
-                        <p>Built a local Debian-based server environment integrated with Docker containers for virtualization, network service testing, and system automation purposes.</p>
-                        <div class="project-tech-tags">
-                            <span class="proj-tag">Debian</span><span class="proj-tag">Docker</span><span class="proj-tag">Linux Server</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass project-card">
-                    <div class="project-img-box">
-                        <i class="fa-solid fa-display text-4xl text-cyan-400"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Multimedia Portfolio Website</h3>
-                        <p>Developed an interactive portfolio website with a modern, responsive design optimized across all devices using the latest front-end technologies.</p>
-                        <div class="project-tech-tags">
-                            <span class="proj-tag">HTML/CSS</span><span class="proj-tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="projects-grid"></div>
         </div>
     </section>
 
-    <!-- ===== ACHIEVEMENTS ===== -->
+    <!-- ===== CERTIFICATES & ACHIEVEMENTS ===== (achievements.js + certificates.js) -->
     <section class="achievements-section" id="achievements">
         <div class="container">
             <div class="section-title">
@@ -213,50 +150,11 @@
                 <p>Official certifications and competency awards I have earned.</p>
             </div>
 
-            <div class="achievements-grid">
-                <div class="glass cert-card">
-                    <div class="cert-icon-box">
-                        <i class="fa-solid fa-trophy text-amber-400 text-3xl"></i>
-                    </div>
-                    <div class="cert-info">
-                        <span class="cert-badge gold">Gold Medalist</span>
-                        <h3>Garuda Science Competition</h3>
-                        <p class="cert-sub">English Language — National Level</p>
-                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2025</span>
-                        <a href="https://drive.google.com/drive/folders/10sc6FHGdN8F_s4JtLOvrPCyq-iZLU0_Z" target="_blank" class="cert-btn">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <div class="glass cert-card">
-                    <div class="cert-icon-box">
-                        <i class="fa-solid fa-medal text-slate-300 text-3xl"></i>
-                    </div>
-                    <div class="cert-info">
-                        <span class="cert-badge bronze">3rd Place</span>
-                        <h3>Cisco Networking Competition</h3>
-                        <p class="cert-sub">Universitas Bakrie — National Level</p>
-                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
-                        <a href="https://drive.google.com/drive/folders/140k6xU6TpmWHq43tldLMCL9IZS01fi3a" target="_blank" class="cert-btn">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <div class="glass cert-card">
-                    <div class="cert-icon-box">
-                        <i class="fa-solid fa-award text-purple-400 text-3xl"></i>
-                    </div>
-                    <div class="cert-info">
-                        <span class="cert-badge silver">2nd Place</span>
-                        <h3>Student Skills Competition (LKS)</h3>
-                        <p class="cert-sub">IT Network System Administration — Bekasi City Level</p>
-                        <span class="cert-year"><i class="fa-solid fa-calendar-days mr-1"></i> 2026</span>
-                        <a href="https://drive.google.com/drive/folders/14KVVTNBvqH5j5SoadpMX-oClW1lw1otJ" target="_blank" class="cert-btn">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
+            <div class="achievements-grid"></div>
         </div>
     </section>
 
-    <!-- ===== JOURNEY / EXPERIENCE ===== -->
+    <!-- ===== JOURNEY / EXPERIENCE ===== (rendered from js/data/experience.js) -->
     <section class="experience-section" id="experience">
         <div class="container">
             <div class="section-title">
@@ -264,66 +162,7 @@
                 <p>A timeline of my educational background and professional experience.</p>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Primary Education</div>
-                    <div class="glass timeline-content">
-                        <h3>SDN Mustika Jaya 7</h3>
-                        <p>Completed elementary level education.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Middle School</div>
-                    <div class="glass timeline-content">
-                        <h3>SMPN 14 Tambun Selatan</h3>
-                        <p>Active academic participation in junior high school.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Vocational High School</div>
-                    <div class="glass timeline-content">
-                        <h3>SMKN 3 Kota Bekasi</h3>
-                        <h4>Major: Computer &amp; Network Engineering (TKJ)</h4>
-                        <p>Studied network topology fundamentals, subnetting, MikroTik (MTCNA), Cisco (CCNA), and Linux server administration.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot" style="background: #ec4899; box-shadow: 0 0 10px #ec4899;"></div>
-                    <div class="timeline-date">Organizational Experience</div>
-                    <div class="glass timeline-content" style="border-color: rgba(236, 72, 153, 0.25);">
-                        <h3>Japanese Club — SMKN 3 Kota Bekasi</h3>
-                        <h4>Vice President</h4>
-                        <p>Led internal community management, organized cultural events, and coordinated activities across multiple divisions.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot" style="background: #a855f7; box-shadow: 0 0 10px #a855f7;"></div>
-                    <div class="timeline-date">Nov 2024 – Apr 2025</div>
-                    <div class="glass timeline-content" style="border-color: rgba(168, 85, 247, 0.25);">
-                        <h3>PT. YCH Distripark</h3>
-                        <h4>IT Network &amp; Infrastructure Support — Internship (6 Months)</h4>
-                        <p>Responsible for monitoring warehouse logistics network stability, troubleshooting operational network devices, and supporting internal IT infrastructure administration.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot" style="background: #22d3ee; box-shadow: 0 0 10px #22d3ee;"></div>
-                    <div class="timeline-date">2026 — Incoming Freshman</div>
-                    <div class="glass timeline-content" style="border-color: rgba(34, 211, 238, 0.3); background: rgba(34, 211, 238, 0.02);">
-                        <h3>Politeknik Negeri Jakarta (PNJ)</h3>
-                        <h4>Faculty: Informatics &amp; Computer Engineering (TIK)</h4>
-                        <h4>Program: Multimedia &amp; Network Engineering (TMJ)</h4>
-                        <p>Enrolled as a new student to deepen the integration of interactive multimedia systems with advanced network infrastructure techniques.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="timeline"></div>
         </div>
     </section>
 
@@ -334,23 +173,8 @@
                 <div class="badge"><div class="dot"></div> GET IN TOUCH</div>
                 <h2 class="contact-title">Let's build something <span>incredible!</span></h2>
                 <p class="contact-desc">Reach out to discuss networking, multimedia, collaboration, or career opportunities.</p>
-                
-                <div class="contact-info-list">
-                    <div class="contact-info-item">
-                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email Me</h4>
-                            <p>frasyapanduasmara@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Bekasi, Indonesia</p>
-                        </div>
-                    </div>
-                </div>
+
+                <div class="contact-info-list"></div>
             </div>
 
             <div class="glass contact-form-container">
@@ -387,10 +211,18 @@
         </div>
     </section>
 
-    <footer>
-        © 2026 Frasya Pandu Asmara — Portfolio. All Rights Reserved.
-    </footer>
+    <footer></footer>
 
+    <!-- ===== Data (edit these to update the site) ===== -->
+    <script src="js/data/profile.js"></script>
+    <script src="js/data/skills.js"></script>
+    <script src="js/data/projects.js"></script>
+    <script src="js/data/achievements.js"></script>
+    <script src="js/data/certificates.js"></script>
+    <script src="js/data/experience.js"></script>
+
+    <!-- ===== Rendering + behavior ===== -->
+    <script src="js/render.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

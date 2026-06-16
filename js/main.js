@@ -1,15 +1,65 @@
 // =============================================
+// Render dynamic content FIRST
+// -------------------------------------------------------------
+// js/render.js builds all the cards/sections from the data files.
+// It must run before the observers below query the DOM so that
+// the generated elements get the fade-in animations too.
+// =============================================
+if (typeof window.renderPortfolio === 'function') {
+    window.renderPortfolio();
+}
+
+// =============================================
+// Dark / Light theme toggle (persisted in localStorage)
+// -------------------------------------------------------------
+// The default is dark — the saved preference (if "light") is
+// applied in <head> before paint to avoid a flash.
+// =============================================
+(function () {
+    const themeToggle = document.getElementById('themeToggle');
+
+    function syncIcon() {
+        if (!themeToggle) return;
+        const icon = themeToggle.querySelector('i');
+        if (!icon) return;
+        const isLight = document.documentElement.classList.contains('light-mode');
+        icon.className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+
+    syncIcon();
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light-mode');
+            try { localStorage.setItem('theme', isLight ? 'light' : 'dark'); } catch (e) {}
+            syncIcon();
+        });
+    }
+})();
+
+// =============================================
+// Horizontal scroll: let the mouse wheel scroll the
+// Projects / Achievements carousels sideways when they
+// overflow (only the grids that got the .scrollable class).
+// =============================================
+document.querySelectorAll('.projects-grid.scrollable, .achievements-grid.scrollable').forEach((el) => {
+    el.addEventListener('wheel', (e) => {
+        // Nothing to scroll horizontally → let the page scroll normally.
+        if (el.scrollWidth <= el.clientWidth) return;
+        // Ignore real horizontal gestures (trackpads handle those already).
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+    }, { passive: false });
+});
+
+// =============================================
 // Navbar scroll effect
 // =============================================
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(5, 5, 20, 0.95)';
-        navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
-    } else {
-        navbar.style.background = '';
-        navbar.style.boxShadow = '';
-    }
+    if (!navbar) return;
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 // =============================================

@@ -118,6 +118,39 @@ body {
     border-color: transparent;
 }
 
+/* Navbar scrolled state (set by js/main.js) */
+.navbar.scrolled {
+    background: rgba(5, 5, 20, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Nav actions cluster (theme toggle + Let's Talk) */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .02);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #22d3ee;
+    border-color: #22d3ee;
+}
+
 /* Hero Section */
 .hero {
     min-height: 90vh;
@@ -1403,4 +1436,242 @@ footer {
         flex-wrap: wrap;
         gap: 6px;
     }
+}
+
+/* =============================================
+   HORIZONTAL SCROLL (auto-enabled when a grid has
+   more than 3 items — class added by js/render.js).
+   With 3 or fewer items the original grid is kept.
+   ============================================= */
+.projects-grid.scrollable,
+.achievements-grid.scrollable {
+    display: flex;
+    grid-template-columns: none;        /* drop the grid layout */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;  /* momentum scroll on iOS */
+    padding-bottom: 12px;               /* room for the scrollbar */
+    /* Firefox: thin, semi-transparent bar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+}
+
+/* Chrome / Safari / Edge: show a transparent-track horizontal bar.
+   These override the global "hidden scrollbar" rule via higher specificity. */
+.projects-grid.scrollable::-webkit-scrollbar,
+.achievements-grid.scrollable::-webkit-scrollbar {
+    width: auto;
+    height: 8px;
+    background: transparent;
+}
+
+.projects-grid.scrollable::-webkit-scrollbar-track,
+.achievements-grid.scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.projects-grid.scrollable::-webkit-scrollbar-thumb,
+.achievements-grid.scrollable::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.4);
+    border-radius: 999px;
+}
+
+.projects-grid.scrollable::-webkit-scrollbar-thumb:hover,
+.achievements-grid.scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.65);
+}
+
+.projects-grid.scrollable > *,
+.achievements-grid.scrollable > * {
+    flex: 0 0 320px;
+    max-width: 320px;
+    scroll-snap-align: start;
+}
+
+@media (max-width: 640px) {
+    .projects-grid.scrollable > *,
+    .achievements-grid.scrollable > * {
+        flex-basis: 280px;
+        max-width: 280px;
+    }
+}
+
+/* =============================================
+   LIGHT MODE THEME
+   -------------------------------------------------------------
+   The dark theme above is the DEFAULT and is unchanged. These
+   rules only apply when <html> has the .light-mode class, which
+   js/main.js toggles and persists to localStorage. The code
+   terminal intentionally stays dark for contrast.
+   ============================================= */
+.light-mode body {
+    background: #e8e6e1;          /* soft warm gray — easy on the eyes */
+    color: #2b303b;              /* dark slate, not harsh black */
+}
+
+.light-mode .hero-bg {
+    background:
+        radial-gradient(circle at top left, rgba(168, 85, 247, .07), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(34, 211, 238, .07), transparent 32%),
+        #e8e6e1;
+}
+
+.light-mode .grid-bg {
+    background-image:
+        linear-gradient(rgba(43, 48, 59, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43, 48, 59, .03) 1px, transparent 1px);
+}
+
+/* --- Navbar / nav --- */
+.light-mode .navbar {
+    background: rgba(236, 234, 229, .8);
+    border-bottom: 1px solid rgba(43, 48, 59, .07);
+}
+
+.light-mode .navbar.scrolled {
+    background: rgba(236, 234, 229, .95);
+    box-shadow: 0 4px 30px rgba(43, 48, 59, .06);
+}
+
+.light-mode .brand h1 {
+    color: #2b303b;
+}
+
+.light-mode .nav-links a {
+    color: #565d68;
+}
+
+.light-mode .nav-links a:hover,
+.light-mode .nav-links a.active-nav {
+    color: #7c3aed;
+}
+
+.light-mode .talk-btn {
+    color: #2b303b;
+    background: rgba(43, 48, 59, .03);
+}
+
+.light-mode .theme-toggle {
+    color: #565d68;
+    background: rgba(43, 48, 59, .04);
+    border-color: rgba(43, 48, 59, .1);
+}
+
+.light-mode .hamburger span {
+    background: #2b303b;
+}
+
+.light-mode .mobile-menu {
+    background: rgba(236, 234, 229, .98);
+    border-bottom: 1px solid rgba(43, 48, 59, .07);
+}
+
+.light-mode .mobile-link {
+    color: #565d68;
+    border-bottom: 1px solid rgba(43, 48, 59, .05);
+}
+
+/* --- Headings / body text --- */
+.light-mode .hero-left h1,
+.light-mode .section-title h2,
+.light-mode .contact-title,
+.light-mode .profile-top h2,
+.light-mode .project-info h3,
+.light-mode .cert-info h3,
+.light-mode .timeline-content h3 {
+    color: #2b303b;
+}
+
+.light-mode .hero-left p,
+.light-mode .about-card p,
+.light-mode .project-info p,
+.light-mode .contact-desc,
+.light-mode .timeline-content p,
+.light-mode .cert-sub {
+    color: #565d68;
+}
+
+.light-mode .section-title p,
+.light-mode .skill-detail,
+.light-mode .cert-year {
+    color: #717784;
+}
+
+/* --- Surfaces / cards (soft frosted, not glaring white) --- */
+.light-mode .glass,
+.light-mode .profile-card {
+    background: rgba(255, 255, 255, .45);
+    border: 1px solid rgba(43, 48, 59, .08);
+}
+
+.light-mode .project-img-box {
+    background: rgba(43, 48, 59, .025);
+    border-bottom: 1px solid rgba(43, 48, 59, .06);
+}
+
+.light-mode .proj-tag {
+    background: rgba(43, 48, 59, .05);
+    color: #4b5563;
+}
+
+.light-mode .skill-badge-item {
+    background: rgba(255, 255, 255, .4);
+    border: 1px solid rgba(43, 48, 59, .06);
+}
+
+.light-mode .skill-name {
+    color: #3a4150;
+}
+
+.light-mode .techs div {
+    background: rgba(255, 255, 255, .4);
+    border: 1px solid rgba(43, 48, 59, .06);
+}
+
+.light-mode .socials div {
+    background: rgba(255, 255, 255, .4);
+    border: 1px solid rgba(43, 48, 59, .08);
+    color: #565d68;
+}
+
+.light-mode .project-card:hover,
+.light-mode .cert-card:hover,
+.light-mode .profile-card:hover,
+.light-mode .glass:hover {
+    border-color: rgba(124, 58, 237, .25);
+    box-shadow: 0 18px 32px rgba(43, 48, 59, .1);
+}
+
+/* --- Buttons / form / contact --- */
+.light-mode .secondary-btn {
+    background: rgba(43, 48, 59, .04);
+    border: 1px solid rgba(43, 48, 59, .1);
+    color: #2b303b;
+}
+
+.light-mode .form-group label {
+    color: #565d68;
+}
+
+.light-mode .form-group input,
+.light-mode .form-group textarea {
+    background: rgba(255, 255, 255, .45);
+    border: 1px solid rgba(43, 48, 59, .1);
+    color: #2b303b;
+}
+
+.light-mode .contact-info-item p {
+    color: #3a4150;
+}
+
+.light-mode .icon-box {
+    background: rgba(124, 58, 237, .07);
+    border: 1px solid rgba(124, 58, 237, .16);
+    color: #7c3aed;
+}
+
+.light-mode footer {
+    border-top: 1px solid rgba(43, 48, 59, .07);
+    color: #717784;
 }
